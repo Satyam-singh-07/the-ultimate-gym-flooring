@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE ULTIMATE GYM FLOORING · strongman grade</title>
+    <!-- Font Awesome 6 (free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Font: Archivo Black + Barlow (masculine, heavy) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* styles.css — strongman aesthetic: industrial, raw, concrete, dark metal */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Barlow", sans-serif;
+        background-color: #121212;
+        background-image: radial-gradient(
+          circle at 20% 30%,
+          #2a2a2a 0%,
+          #0a0a0a 90%
+        );
+        color: #e0e0e0;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      /* floating whatsapp — chunky, black oxide, industrial */
+      .wa-float {
+        position: fixed;
+        bottom: 2.5rem;
+        right: 2.5rem;
+        width: 85px;
+        height: 85px;
+        background: #1e1e1e;
+        border: 4px solid #d4af37;
+        color: #d4af37;
+        font-size: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30% 70% 30% 70% / 60% 40% 60% 40%;
+        box-shadow:
+          0 0 0 2px #5a3e1b,
+          0 20px 30px -10px black;
+        transition: 0.2s;
+        z-index: 999;
+        text-decoration: none;
+      }
+
+      .wa-float:hover {
+        background: #d4af37;
+        color: #121212;
+        border-color: white;
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: 0 0 30px #d4af37;
+      }
+
+      /* container — brutal, wide */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+
+      section {
+        margin: 8rem 0;
+        scroll-margin-top: 3rem;
+      }
+
+      /* typography — heavy, all caps, strong */
+      h1 {
+        font-family: "Archivo Black", sans-serif;
+        font-size: clamp(4rem, 10vw, 7rem);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #d4af37;
+        -webkit-text-stroke: 2px #3e2e14;
+        text-shadow:
+          8px 8px 0 #0a0a0a,
+          12px 12px 0 rgba(0, 0, 0, 0.8);
+      }
+
+      h2 {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        color: #f0f0f0;
+        border-left: 10px solid #d4af37;
+        padding-left: 1.5rem;
+        margin-bottom: 3rem;
+        letter-spacing: -0.02em;
+        text-shadow: 3px 3px 0 #0f0f0f;
+      }
+
+      /* hero — forged iron look */
+      .hero-forge {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr;
+        gap: 2rem;
+        align-items: center;
+        background: #1c1c1c;
+        border: 6px solid #3e3e3e;
+        box-shadow:
+          inset 0 0 30px #000000,
+          20px 20px 0 #0a0a0a;
+        padding: 3rem 3rem 3rem 4rem;
+        border-radius: 20px;
+        position: relative;
+      }
+
+      .hero-left p {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #bbbbbb;
+        background: #2a2a2a;
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        border-left: 8px solid #d4af37;
+        margin: 1.5rem 0;
+      }
+
+      .hero-right {
+        background: #2b2b2b;
+        border: 4px solid #d4af37;
+        padding: 3rem 2rem;
+        text-align: center;
+        box-shadow: 15px 15px 0 #0f0f0f;
+      }
+
+      .hero-right i {
+        font-size: 8rem;
+        color: #d4af37;
+        filter: drop-shadow(8px 8px 0 black);
+      }
+
+      .strong-badge {
+        background: #2a2a2a;
+        border: 3px solid #d4af37;
+        color: #d4af37;
+        font-weight: 800;
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 6px 6px 0 black;
+      }
+
+      /* problem — heavy plates */
+      .pain-iron {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+      }
+
+      .pain-block {
+        background: #1e1e1e;
+        border: 3px solid #3e3e3e;
+        padding: 2.5rem 1.5rem;
+        box-shadow: 12px 12px 0 #0a0a0a;
+        border-top: 8px solid #d4af37;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+
+      .pain-block i {
+        font-size: 3.5rem;
+        color: #d4af37;
+        margin-bottom: 1rem;
+      }
+
+      /* solution — raw steel */
+      .raw-solution {
+        background: #222;
+        border: 4px solid #5a5a5a;
+        padding: 4rem 3rem;
+        display: flex;
+        gap: 3rem;
+        flex-wrap: wrap;
+        align-items: center;
+        box-shadow:
+          0 0 0 4px #d4af37 inset,
+          20px 20px 0 black;
+      }
+
+      .raw-solution h3 {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 4rem;
+        line-height: 1;
+        color: #d4af37;
+      }
+
+      /* benefits — iron grip */
+      .benefit-heavy {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .heavy-card {
+        background: #1b1b1b;
+        border: 4px solid #d4af37;
+        padding: 3rem 2rem;
+        box-shadow: 20px 20px 0 #000000;
+        transition: 0.15s;
+        text-align: center;
+      }
+
+      .heavy-card i {
+        font-size: 4rem;
+        color: #d4af37;
+        margin-bottom: 1.5rem;
+      }
+
+      .heavy-card:hover {
+        transform: translate(-6px, -6px);
+        box-shadow: 26px 26px 0 black;
+      }
+
+      /* steps — strongman logbook */
+      .steps-strong {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .step-log {
+        background: #232323;
+        border: 3px solid #7a5a2e;
+        padding: 2rem;
+        box-shadow: 10px 10px 0 black;
+        counter-increment: step-count;
+        position: relative;
+      }
+
+      .step-log::before {
+        content: "0" counter(step-count);
+        font-family: "Archivo Black", sans-serif;
+        font-size: 4rem;
+        color: #d4af37;
+        opacity: 0.3;
+        position: absolute;
+        bottom: 5px;
+        right: 15px;
+      }
+
+      /* social proof — iron testimonials */
+      .testimonial-strong {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .strong-talk {
+        background: #1f1f1f;
+        border-left: 12px solid #d4af37;
+        padding: 2rem;
+        box-shadow: 10px 10px 0 black;
+        font-weight: 600;
+      }
+
+      .strong-talk i {
+        color: #d4af37;
+        margin-bottom: 1rem;
+      }
+
+      .client-strip {
+        display: flex;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .client-strip span {
+        background: #2c2c2c;
+        border: 2px solid #d4af37;
+        padding: 0.8rem 2.5rem;
+        font-weight: 800;
+        font-size: 1.3rem;
+        box-shadow: 6px 6px 0 black;
+      }
+
+      /* specs — heavy duty */
+      .specs-heavy {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.8rem;
+      }
+
+      .spec-block {
+        background: #1a1a1a;
+        border: 3px solid #d4af37;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 8px 8px 0 black;
+      }
+
+      .spec-block i {
+        font-size: 3rem;
+        color: #d4af37;
+      }
+
+      /* pricing — no nonsense */
+      .pricing-strong {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .price-slab {
+        background: #202020;
+        border: 4px solid #3e3e3e;
+        padding: 2.5rem 2rem;
+        box-shadow: 15px 15px 0 black;
+        border-top: 12px solid #d4af37;
+      }
+
+      .price-slab.pop {
+        border-color: #d4af37;
+        background: #2b2b2b;
+        transform: scale(1.02);
+      }
+
+      .price-number {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #d4af37;
+      }
+
+      .guarantee-mark {
+        background: #2a2a2a;
+        display: inline-block;
+        padding: 0.3rem 1.8rem;
+        border: 2px solid #d4af37;
+        font-weight: 700;
+      }
+
+      /* FAQ — man enough */
+      .faq-strong {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .faq-item {
+        background: #1e1e1e;
+        border: 2px solid #5a5a5a;
+        padding: 1.8rem;
+        box-shadow: 8px 8px 0 black;
+      }
+
+      .faq-item i {
+        color: #d4af37;
+        width: 2rem;
+      }
+
+      /* final cta — forged */
+      .final-forge {
+        background: #1e1e1e;
+        border: 8px solid #3e3e3e;
+        padding: 5rem 3rem;
+        text-align: center;
+        box-shadow:
+          0 0 0 4px #d4af37 inset,
+          30px 30px 0 black;
+      }
+
+      .final-forge h3 {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 5rem;
+        color: #d4af37;
+        text-transform: uppercase;
+      }
+
+      .cta-monster {
+        background: #d4af37;
+        border: none;
+        color: #121212;
+        font-weight: 800;
+        font-size: 2.8rem;
+        padding: 1.5rem 4rem;
+        margin-top: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        box-shadow:
+          16px 16px 0 black,
+          0 0 0 4px #5a3e1b;
+        text-decoration: none;
+        border: 3px solid white;
+      }
+
+      .cta-monster:hover {
+        background: #ffffff;
+        color: black;
+        box-shadow: 20px 20px 0 black;
+      }
+
+      footer {
+        padding: 3rem 0;
+        text-align: center;
+        border-top: 6px solid #3e3e3e;
+        color: #888;
+        font-weight: 600;
+      }
+
+      @media (max-width: 1000px) {
+        .hero-forge {
+          grid-template-columns: 1fr;
+        }
+        .pain-iron,
+        .benefit-heavy,
+        .steps-strong,
+        .testimonial-strong,
+        .specs-heavy,
+        .pricing-strong,
+        .faq-strong {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 4rem;
+        }
+        h2 {
+          font-size: 2.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- floating whatsapp — industrial chunk -->
+    <a
+      href="https://wa.me/1234567890?text=Strong%20floor%20needed.%20Let's%20talk."
+      class="wa-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main class="container">
+      <!-- 1. HERO — strongman edition -->
+      <section>
+        <div class="hero-forge">
+          <div class="hero-left">
+            <h1>FLOOR THAT<br />CAN TAKE<br />THE WEIGHT</h1>
+            <p><i class="fas fa-dumbbell"></i> 20mm THICK · 10 TONNE TESTED</p>
+            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap">
+              <span class="strong-badge"
+                ><i class="fas fa-shield"></i> LIFETIME RAW</span
+              >
+              <span class="strong-badge"
+                ><i class="fas fa-star"></i> 4.98/5 (800+ GYMS)</span
+              >
+            </div>
+          </div>
+          <div class="hero-right">
+            <i class="fas fa-weight-hanging"></i>
+            <div style="font-weight: 800; font-size: 2rem; margin-top: 1rem">
+              DEADLIFT · TIRE FLIP · SLED DRAG
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. PROBLEM — what hurts -->
+      <section>
+        <h2>⚠️ WEAK FLOORS COST MORE</h2>
+        <div class="pain-iron">
+          <div class="pain-block">
+            <i class="fas fa-trowel"></i>
+            <h3>CRACKED CONCRETE</h3>
+            <p>Repairs = $$$</p>
+          </div>
+          <div class="pain-block">
+            <i class="fas fa-ear-deaf"></i>
+            <h3>NOISE = FINES</h3>
+            <p>neighbours hate you</p>
+          </div>
+          <div class="pain-block">
+            <i class="fas fa-person-falling"></i>
+            <h3>SLIP & INJURY</h3>
+            <p>liability rises</p>
+          </div>
+          <div class="pain-block">
+            <i class="fas fa-clock"></i>
+            <h3>WEARS OUT FAST</h3>
+            <p>replacing every year</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SOLUTION — the ultimate answer -->
+      <section>
+        <div class="raw-solution">
+          <h3>THE ULTIMATE<br />RUBBER ARMOR</h3>
+          <div style="font-size: 1.8rem; font-weight: 700">
+            virgin EPDM · 850kg/m³ density · interlock / rolls · 10 year
+            ironclad warranty
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. BENEFITS (results, strong style) -->
+      <section>
+        <h2>💪 YOU GET</h2>
+        <div class="benefit-heavy">
+          <div class="heavy-card">
+            <i class="fas fa-volume-off"></i>
+            <h3>-82% NOISE</h3>
+            <p>drop 500lbs — barely a thud</p>
+          </div>
+          <div class="heavy-card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>10 YEARS FLAT</h3>
+            <p>no sag, no cracks, no BS</p>
+          </div>
+          <div class="heavy-card">
+            <i class="fas fa-broom"></i>
+            <h3>WIPE & DONE</h3>
+            <p>sweat, chalk, blood — cleans fast</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. HOW IT WORKS — strongman log -->
+      <section>
+        <h2>📋 3 STEPS TO HEAVY</h2>
+        <div class="steps-strong" style="counter-reset: step-count">
+          <div class="step-log">
+            <h3>MEASURE</h3>
+            <p>laser-measure, we cut exact</p>
+          </div>
+          <div class="step-log">
+            <h3>LOCK</h3>
+            <p>interlocking teeth — no glue</p>
+          </div>
+          <div class="step-log">
+            <h3>DROP</h3>
+            <p>first rep: floor smiles back</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SOCIAL PROOF — strong testimonials -->
+      <section>
+        <h2>🗣️ TRUSTED BY THE STRONG</h2>
+        <div class="testimonial-strong">
+          <div class="strong-talk">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i> “Three years of atlas stones — floor is
+            mint.” <br />
+            <span style="color: #d4af37">— Brian, strongman gym</span>
+          </div>
+          <div class="strong-talk">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i> “No more noise complaints from
+            downstairs.” <br />
+            <span style="color: #d4af37">— powerlifting garage</span>
+          </div>
+          <div class="strong-talk">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i> “Worth every penny. Real heavy duty.”
+            <br />
+            <span style="color: #d4af37">— crossfit box owner</span>
+          </div>
+        </div>
+        <div class="client-strip">
+          <span>IRON VALLEY</span><span>STRONGMAN VAULT</span
+          ><span>POWER HAUS</span><span>ROGUE ATHLETICS</span>
+        </div>
+      </section>
+
+      <!-- 7. DETAILS / SPECS — heavy numbers -->
+      <section>
+        <h2>⚙️ SPECS — NO NONSENSE</h2>
+        <div class="specs-heavy">
+          <div class="spec-block"><i class="fas fa-ruler"></i> 10/15/20mm</div>
+          <div class="spec-block">
+            <i class="fas fa-weight-scale"></i> 850kg/m³
+          </div>
+          <div class="spec-block"><i class="fas fa-fire"></i> Class A</div>
+          <div class="spec-block"><i class="fas fa-droplet"></i> 0% water</div>
+        </div>
+      </section>
+
+      <!-- 8. PRICING — straightforward -->
+      <section>
+        <h2>💰 PRICE = VALUE</h2>
+        <div class="pricing-strong">
+          <div class="price-slab">
+            <span class="guarantee-mark">TILES 20mm</span>
+            <div class="price-number">$5.49<small>/ft²</small></div>
+            <p>10 year / interlock</p>
+          </div>
+          <div class="price-slab pop">
+            <span class="guarantee-mark">🔥 MOST DENSE</span>
+            <div class="price-number">$4.99<small>/ft²</small></div>
+            <p>rolls 15mm seamless</p>
+          </div>
+          <div class="price-slab">
+            <span class="guarantee-mark">SAMPLE</span>
+            <div class="price-number">$9</div>
+            <p>refundable · 4 swatches</p>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem">
+          <i class="fas fa-shield"></i> 60-day guarantee · free shipping over
+          $1500
+        </p>
+      </section>
+
+      <!-- 9. FAQ — straight answers -->
+      <section>
+        <h2>❓ SHORT & HEAVY</h2>
+        <div class="faq-strong">
+          <div class="faq-item">
+            <i class="fas fa-truck"></i> <strong>SHIPPING?</strong> 3-5 days,
+            bulk discount
+          </div>
+          <div class="faq-item">
+            <i class="fas fa-tools"></i> <strong>INSTALL?</strong> DIY click, no
+            adhesive
+          </div>
+          <div class="faq-item">
+            <i class="fas fa-rotate-left"></i> <strong>RETURNS?</strong> 30
+            days, no restock
+          </div>
+          <div class="faq-item">
+            <i class="fas fa-dumbbell"></i> <strong>MAX LOAD?</strong> 800lb
+            drops, 10k rolls
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. FINAL CTA — forged to close -->
+      <section>
+        <div class="final-forge">
+          <h3>READY TO<br />LIFT HEAVY?</h3>
+          <p style="font-size: 2rem; margin: 2rem 0">
+            10 year warranty · 60‑day trial · free shipping over $1500
+          </p>
+          <a
+            href="https://wa.me/1234567890?text=Let's%20get%20the%20STRONG%20floor%20now."
+            target="_blank"
+            class="cta-monster"
+            ><i class="fab fa-whatsapp"></i> ORDER VIA WA</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 THE ULTIMATE GYM FLOORING — 480 INDUSTRIAL AVE, AUSTIN TX · IG
+        @ULTIMATE_STRONG
+      </p>
+    </footer>
+
+    <script>
+      // smooth scroll for anchors
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const id = this.getAttribute("href");
+          if (id && id.length > 1) {
+            e.preventDefault();
+            document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
