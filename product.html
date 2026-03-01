@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=5"
+    />
+    <title>Products · ultimate gym flooring</title>
+    <!-- Font Awesome 6 (free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Font: Plus Jakarta Sans (exact same) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ---------- RESET & GLOBAL (identical to index) ---------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #0b0c0e;
+        background-image: radial-gradient(
+          circle at 25% 0%,
+          #1f1f2a 0%,
+          #0a0a0c 100%
+        );
+        color: #ededf2;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        width: 100%;
+      }
+      .container,
+      .products-container,
+      .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 5%;
+        width: 100%;
+      }
+      section {
+        scroll-margin-top: 90px;
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      section:not(.hero):not(.products-showcase):not(.site-footer) {
+        margin: 5rem auto;
+        max-width: 1400px;
+        padding: 0 5%;
+      }
+      h1 {
+        font-size: clamp(3rem, 10vw, 6rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: clamp(2.5rem, 5vw, 3.2rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 3rem;
+        display: inline-block;
+        background: linear-gradient(130deg, #f87171, #ef4444, #dc2626);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        border-left: 6px solid #ef4444;
+        padding-left: 1.5rem;
+        width: auto;
+        max-width: 100%;
+      }
+      /* ---------- HEADER (identical) ---------- */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(10, 10, 12, 0.7);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #ffffff10;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: #ef4444;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+      }
+      nav a {
+        color: #ddd;
+        text-decoration: none;
+        margin-left: 2rem;
+        font-weight: 600;
+        transition: 0.25s;
+        position: relative;
+      }
+      nav a:hover {
+        color: #ef4444;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #ef4444;
+        transition: 0.3s;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* ---------- FLOATING WHATSAPP ---------- */
+      .wa-float {
+        position: fixed;
+        bottom: 2.5rem;
+        right: 2.5rem;
+        width: 80px;
+        height: 80px;
+        background: rgba(34, 197, 94, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(74, 222, 128, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4ade80;
+        font-size: 2.8rem;
+        box-shadow:
+          0 0 40px #22c55e40,
+          0 15px 30px -10px #00000080;
+        transition: 0.25s ease;
+        z-index: 1001;
+        text-decoration: none;
+      }
+      .wa-float:hover {
+        transform: scale(1.15) rotate(3deg);
+        background: #22c55e;
+        color: black;
+        border-color: white;
+      }
+
+      /* ---------- HERO (products version, but same design language) ---------- */
+      .products-hero {
+        min-height: 50vh;
+        background: url("images/gym-products-hero.jpg") center/cover no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 0;
+      }
+      .products-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 6rem 5%;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: #ef4444;
+        color: black;
+        font-weight: 700;
+        padding: 0.5rem 1.8rem;
+        border-radius: 60px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 0 30px #ef4444;
+      }
+      .hero-content h1 {
+        font-size: clamp(3.5rem, 12vw, 7rem);
+        color: white;
+        line-height: 1;
+      }
+      .hero-content p {
+        font-size: 1.4rem;
+        color: #ccc;
+        max-width: 700px;
+        margin-top: 1rem;
+      }
+
+      /* ---------- PRODUCT GRID (core of the page) ---------- */
+      .product-grid-section {
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+        width: 100%;
+      }
+      /* premium card – same glass/hover as index .benefit-card / .pain-card hybrid */
+      .product-card-detailed {
+        background: rgba(20, 20, 28, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        border-radius: 48px 16px 48px 16px;
+        padding: 1.8rem 1.5rem 2rem;
+        transition: all 0.25s ease;
+        box-shadow: 0 30px 40px -30px black;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .product-card-detailed:hover {
+        border-color: #ef4444;
+        box-shadow: 0 0 40px #ef444430;
+        transform: translateY(-8px) scale(1.01);
+        background: #1c1d22;
+      }
+      /* image gallery / slider simulation (3 images) */
+      .gallery-preview {
+        display: flex;
+        gap: 0.5rem;
+        margin: 1rem 0 0.8rem;
+        flex-wrap: wrap;
+      }
+      .gallery-thumb {
+        width: calc(33.333% - 0.35rem);
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 2px solid transparent;
+        transition: 0.2s;
+        background: #2a2c32;
+      }
+      .gallery-thumb:hover {
+        border-color: #ef4444;
+        transform: scale(1.02);
+      }
+      .product-card-detailed h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: white;
+        letter-spacing: -0.02em;
+        margin-top: 0.5rem;
+      }
+      .product-desc {
+        color: #aaa;
+        font-size: 0.95rem;
+        margin: 0.5rem 0 0.8rem;
+        line-height: 1.4;
+        flex: 1;
+      }
+      .product-spec-mini {
+        display: flex;
+        gap: 1rem;
+        margin: 0.8rem 0;
+        color: #ef4444;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .product-spec-mini i {
+        margin-right: 0.3rem;
+        color: #f87171;
+      }
+      .card-footer-line {
+        border-top: 1px solid #ef444420;
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .card-footer-line span {
+        color: #ef4444;
+        font-weight: 600;
+      }
+
+      /* ---------- TRUSTED / footer identical to index ---------- */
+      .site-footer {
+        background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+        color: #ddd;
+        padding-top: 5rem;
+        width: 100%;
+      }
+      .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+      .footer-logo {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+      .footer-text {
+        color: #aaa;
+        line-height: 1.7;
+        max-width: 300px;
+      }
+      .footer-col h4 {
+        color: #ff2424;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-col ul li {
+        margin-bottom: 0.8rem;
+      }
+      .footer-col ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .footer-col ul li a:hover {
+        color: #ff2424;
+      }
+      .footer-bottom {
+        border-top: 1px solid #222;
+        margin-top: 4rem;
+        padding: 1.5rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .social-icons a {
+        width: 45px;
+        height: 45px;
+        background: #1c1c1c;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #aaa;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      .social-icons i {
+        font-size: 1.2rem;
+      }
+      .social-icons a:hover {
+        transform: translateY(-5px) scale(1.1);
+        color: white;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      /* ---------- responsive (same breakpoints) ---------- */
+      @media (max-width: 1000px) {
+        .footer-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+        .nav-links {
+          position: fixed;
+          top: 80px;
+          left: 0;
+          width: 100%;
+          height: calc(100vh - 80px);
+          background: rgba(10, 10, 12, 0.98);
+          backdrop-filter: blur(20px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+          z-index: 999;
+          overflow-y: auto;
+        }
+        .nav-links.active {
+          transform: translateX(0);
+        }
+        .nav-links a {
+          margin: 1.5rem 0;
+          font-size: 1.8rem;
+        }
+        body.noscroll {
+          overflow: hidden !important;
+          position: fixed;
+          width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        .wa-float {
+          width: 65px;
+          height: 65px;
+          font-size: 2.2rem;
+          bottom: 1.2rem;
+          right: 1.2rem;
+        }
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+        }
+        .social-icons {
+          justify-content: center;
+        }
+      }
+      main {
+        padding-top: 80px;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      /* ---------- dummy image fallback (using unsplash / placeholder for demo) ---------- */
+      .gallery-thumb[src=""] {
+        background: linear-gradient(145deg, #2a2c32, #1a1c22);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER (identical to index) -->
+    <header class="site-header">
+      <div class="container nav">
+        <div class="logo">ULTIMATE<span>FLOOR</span></div>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#how">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="product.html" style="color: #ef4444">Products</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- floating whatsapp -->
+    <a
+      href="https://wa.me/1234567890?text=Hi%20Ultimate%20Gym%20Flooring%21%20I'm%20interested%20in%20your%20products."
+      class="wa-float"
+      target="_blank"
+      rel="noopener"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+
+    <main>
+      <!-- PRODUCTS HERO (same industrial style) -->
+      <section
+        class="products-hero"
+        style="
+          background-image: url(&quot;images/still-life-gym-equipment.jpg&quot;);
+        "
+      >
+        <div class="hero-content">
+          <div class="container" style="padding: 0">
+            <span class="hero-badge"
+              ><i class="fas fa-dumbbell"></i> 5 premium floors</span
+            >
+            <h1>RAW <span style="color: #ef4444">PRODUCTS</span></h1>
+            <p>
+              Engineered rubber · heavy duty rolls · colour tiles · stretch
+              ceilings
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCT GRID (exactly 5 items, each with multiple images) -->
+      <section class="product-grid-section">
+        <div class="container">
+          <h2 style="margin-bottom: 2rem">/// SHOWCASE</h2>
+          <div class="product-grid">
+            <!-- 1. Stretch Ceiling -->
+            <div class="product-card-detailed">
+              <h3>STRETCH CEILING</h3>
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.42 PM.jpeg"
+                  alt="stretch ceiling 1"
+                  loading="lazy"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.43 PM (1).jpeg"
+                  alt="stretch ceiling 2"
+                  loading="lazy"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.43 PM.jpeg"
+                  alt="stretch ceiling 3"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-spec-mini">
+                <span><i class="fas fa-ruler"></i> 3-5mm</span>
+                <span><i class="fas fa-tint"></i> waterproof</span>
+              </div>
+              <p class="product-desc">
+                Acoustic membrane, seamless finish, reduces echo – perfect for
+                studios.
+              </p>
+              <div class="card-footer-line">
+                <span>⚡ premium pvc</span> <span>★★★★★</span>
+              </div>
+            </div>
+
+            <!-- 2. Running Track -->
+            <div class="product-card-detailed">
+              <h3>RUNNING TRACK</h3>
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.48 PM.jpeg"
+                  alt="running track 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.57 PM.jpeg"
+                  alt="running track 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.17.00 PM.jpeg"
+                  alt="running track 3"
+                />
+              </div>
+              <div class="product-spec-mini">
+                <span><i class="fas fa-bolt"></i> 8mm</span>
+                <span
+                  ><i class="fas fa-arrow-rotate-left"></i> energy return</span
+                >
+              </div>
+              <p class="product-desc">
+                EPDM granules, high resilience, athletic grip for sprints &
+                sleds.
+              </p>
+              <div class="card-footer-line">
+                <span>⚡ 3 layers</span> <span>★★★★☆</span>
+              </div>
+            </div>
+
+            <!-- 3. Sports Grass -->
+            <div class="product-card-detailed">
+              <h3>SPORTS GRASS</h3>
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.21 PM.jpeg"
+                  alt="sports grass 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.20 PM.jpeg"
+                  alt="sports grass 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.19 PM.jpeg"
+                  alt="sports grass 3"
+                />
+              </div>
+              <div class="product-spec-mini">
+                <span><i class="fas fa-leaf"></i> 40mm pile</span>
+                <span><i class="fas fa-fill-drip"></i> infill option</span>
+              </div>
+              <p class="product-desc">
+                Turf for functional fitness, indoor/outdoor, realistic feel &
+                drainage.
+              </p>
+              <div class="card-footer-line">
+                <span>⚡ uv stable</span> <span>★★★★★</span>
+              </div>
+            </div>
+
+            <!-- 4. New White Rubber Roll -->
+            <div class="product-card-detailed">
+              <h3>WHITE RUBBER ROLL</h3>
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
+                  alt="white rubber 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.37 PM.jpeg"
+                  alt="white rubber 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
+                  alt="white rubber 3"
+                />
+              </div>
+              <div class="product-spec-mini">
+                <span><i class="fas fa-weight-hanging"></i> 6mm / 8mm</span>
+                <span><i class="fas fa-broom"></i> stain resistant</span>
+              </div>
+              <p class="product-desc">
+                Virgin rubber, bright white finish – never yellows. Easy clean,
+                commercial grade.
+              </p>
+              <div class="card-footer-line">
+                <span>⚡ non-marking</span> <span>★★★★★</span>
+              </div>
+            </div>
+
+            <!-- 5. Colour Tile -->
+            <div class="product-card-detailed">
+              <h3>COLOUR TILE</h3>
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.38.47 PM (1).jpeg"
+                  alt="colour tile 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.28.17 PM.jpeg"
+                  alt="colour tile 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.28.15 PM.jpeg"
+                  alt="colour tile 3"
+                />
+              </div>
+              <div class="product-spec-mini">
+                <span><i class="fas fa-border-all"></i> 50x50cm</span>
+                <span><i class="fas fa-palette"></i> 12 colors</span>
+              </div>
+              <p class="product-desc">
+                Interlocking EPDM tiles, design any pattern, shock absorbing &
+                bold.
+              </p>
+              <div class="card-footer-line">
+                <span>⚡ 10yr color</span> <span>★★★★☆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- extra CTA / spec strip (consistent with index) -->
+      <section style="margin-top: 2rem; margin-bottom: 2rem">
+        <div class="container">
+          <div
+            class="solution-shatter"
+            style="border-radius: 80px 20px 80px 20px"
+          >
+            <div class="solution-feature" style="background: #0f0f13">
+              <i
+                class="fas fa-crown"
+                style="font-size: 3rem; color: #ef4444"
+              ></i>
+              <h3 style="font-size: 2rem">EVERY PRODUCT TESTED</h3>
+            </div>
+            <div>
+              <p style="font-size: 1.3rem">
+                <span style="color: #ef4444">></span> 800lb drop test · fire
+                class A · slip coefficient >0.6
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- quick faq / trust (tiny slice) -->
+      <section>
+        <div class="container">
+          <div class="spec-grid" style="grid-template-columns: repeat(5, 1fr)">
+            <div class="spec-cell">
+              <i class="fas fa-truck"></i> free shipping over $1500
+            </div>
+            <div class="spec-cell">
+              <i class="fas fa-rotate-left"></i> 30-day return
+            </div>
+            <div class="spec-cell">
+              <i class="fas fa-shield-halved"></i> 10y warranty
+            </div>
+            <div class="spec-cell">
+              <i class="fas fa-palette"></i> custom colors
+            </div>
+            <div class="spec-cell">
+              <i class="fas fa-weight-scale"></i> 850kg/m³ density
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER (exact copy from index) -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col footer-brand">
+          <h2 class="footer-logo">ULTIMATEFLOOR</h2>
+          <p class="footer-text">
+            Premium gym flooring solutions designed for durability, safety and
+            performance.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>Contact Us</h4>
+          <p><strong>📍 Address:</strong><br />Sector 62, Noida, India</p>
+          <p><strong>📞 Phone:</strong><br />+91 98765 43210</p>
+          <p><strong>✉ Email:</strong><br />info@ultimatefloor.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2021 UltimateFloor. All Rights Reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#"><i class="fab fa-telegram fa-lg"></i></a>
+          <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SAME MENU SCRIPT (copy-paste) -->
+    <script>
+      (function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const id = this.getAttribute("href");
+            if (id.length > 1) {
+              e.preventDefault();
+              const target = document.querySelector(id);
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+                document
+                  .querySelector(".nav-links")
+                  ?.classList.remove("active");
+                document.body.classList.remove("noscroll");
+                const icon = document.querySelector(".menu-toggle i");
+                if (icon) {
+                  icon.classList.add("fa-bars");
+                  icon.classList.remove("fa-times");
+                }
+              }
+            }
+          });
+        });
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        if (menuToggle && navLinks) {
+          const menuIcon = menuToggle.querySelector("i");
+          menuToggle.addEventListener("click", () => {
+            const isActive = navLinks.classList.contains("active");
+            navLinks.classList.toggle("active", !isActive);
+            if (!isActive) {
+              document.body.classList.add("noscroll");
+              menuIcon.classList.remove("fa-bars");
+              menuIcon.classList.add("fa-times");
+            } else {
+              document.body.classList.remove("noscroll");
+              menuIcon.classList.add("fa-bars");
+              menuIcon.classList.remove("fa-times");
+            }
+          });
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              navLinks.classList.remove("active");
+              document.body.classList.remove("noscroll");
+              const icon = document.querySelector(".menu-toggle i");
+              if (icon) {
+                icon.classList.add("fa-bars");
+                icon.classList.remove("fa-times");
+              }
+            });
+          });
+        }
+        window.addEventListener("resize", function () {
+          if (
+            window.innerWidth > 768 &&
+            navLinks?.classList.contains("active")
+          ) {
+            navLinks.classList.remove("active");
+            document.body.classList.remove("noscroll");
+            const icon = document.querySelector(".menu-toggle i");
+            if (icon) {
+              icon.classList.add("fa-bars");
+              icon.classList.remove("fa-times");
+            }
+          }
+        });
+        window.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && navLinks?.classList.contains("active")) {
+            navLinks.classList.remove("active");
+            document.body.classList.remove("noscroll");
+            const icon = document.querySelector(".menu-toggle i");
+            if (icon) {
+              icon.classList.add("fa-bars");
+              icon.classList.remove("fa-times");
+            }
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

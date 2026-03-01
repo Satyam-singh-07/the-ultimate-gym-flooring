@@ -67,7 +67,7 @@
 
       section:not(.hero):not(.power-split):not(.products-showcase):not(
           .trusted-section
-        ):not(.contact-section) {
+        ):not(.contact-section):not(.floor-benefits) {
         margin: 5rem auto;
         max-width: 1400px;
         padding: 0 5%;
@@ -1230,6 +1230,208 @@
           width: 90%;
         }
       }
+      /* ===== FLOOR BENEFITS SPLIT ===== */
+
+      .floor-benefits {
+        width: 100%;
+        padding: 0;
+        background: #e9e9e9;
+        overflow: hidden;
+      }
+
+      .benefits-wrapper {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        min-height: 650px;
+        width: 100%;
+      }
+
+      .benefits-wrapper {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        align-items: stretch;
+      }
+
+      /* IMAGE SIDE */
+      .benefits-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px 0 0 30px;
+      }
+
+      /* CONTENT SIDE */
+      .benefits-content {
+        background: #f5f5f5;
+        padding: 5rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* ICON */
+      .benefit-icon {
+        width: 80px;
+        height: 80px;
+        background: #b6ff00;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .benefit-icon i {
+        font-size: 2rem;
+        color: black;
+      }
+
+      /* TEXT */
+      .benefit-tag {
+        color: #ef4444;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .benefit-heading {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 900;
+        line-height: 1;
+        color: black;
+        margin-bottom: 2rem;
+      }
+
+      /* LIST */
+      .benefit-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 2rem;
+        font-weight: 600;
+        color: #222;
+      }
+      @media (max-width: 900px) {
+        .benefits-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .benefits-image img {
+          border-radius: 30px 30px 0 0;
+          height: 400px;
+        }
+
+        .benefits-content {
+          padding: 3rem 2rem;
+        }
+
+        .benefit-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ===== GALLERY ===== */
+
+      .gallery-section {
+        background: #0b0c0e;
+        padding: 6rem 0;
+        width: 100%;
+      }
+
+      .gallery-container {
+        max-width: 1400px;
+        margin: auto;
+        padding: 0 5%;
+      }
+
+      .gallery-header {
+        margin-bottom: 3rem;
+      }
+
+      .gallery-tag {
+        color: #ef4444;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .gallery-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 900;
+        color: white;
+      }
+
+      /* GRID */
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 260px;
+        gap: 1.5rem;
+        grid-auto-flow: dense;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s ease;
+      }
+
+      /* PREMIUM HOVER */
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      /* SIZE VARIATIONS */
+      .gallery-item.tall {
+        grid-row: span 2;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 2;
+      }
+
+      @media (max-width: 1000px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 220px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-item.tall,
+        .gallery-item.wide {
+          grid-column: auto;
+          grid-row: auto;
+        }
+      }
+      /* MULTI IMAGE PREVIEW */
+
+      .product-preview {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 100%;
+      }
+
+      .product-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s ease;
+      }
+
+      .product-card:hover .product-preview img {
+        transform: scale(1.08);
+      }
     </style>
   </head>
   <body>
@@ -1344,6 +1546,25 @@
         </div>
       </section>
 
+      <!-- 5. HOW IT WORKS -->
+      <section id="how">
+        <h2>3 MOVES TO HEAVEN</h2>
+        <div class="steps-container">
+          <div class="step-item">
+            <h3>FIRE LASER</h3>
+            <p>Measure your space, we cut exact.</p>
+          </div>
+          <div class="step-item">
+            <h3>CLICK & LOCK</h3>
+            <p>Tiles fuse like titanium puzzle.</p>
+          </div>
+          <div class="step-item">
+            <h3>DROP ATOMIC</h3>
+            <p>First rep – floor smiles back.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- POWER SPLIT -->
       <section class="power-split">
         <div class="power-grid">
@@ -1382,7 +1603,7 @@
             <p>Neighbors hate you. Fines piling up.</p>
           </div>
           <div class="pain-card">
-            <i class="fas fa-person-falling"></i>
+            <i class="fas fa-triangle-exclamation"></i>
             <h3>SLIP ZONE</h3>
             <p>Sweat + cheap vinyl = lawsuit waiting.</p>
           </div>
@@ -1416,32 +1637,85 @@
             </div>
           </div>
           <div class="products-grid">
-            <div class="product-card">
-              <img src="images/Rubber Gym Flooring Tiles.jpeg" alt="Aerobic" />
-              <span>AEROBIC</span>
-            </div>
-            <div class="product-card">
-              <img src="images/EPDM Rubber Tiles.jpeg" alt="Training" />
-              <span>TRAINING</span>
-            </div>
-            <div class="product-card">
-              <img
-                src="images/Interlocking Rubber Mats.jpeg"
-                alt="Body Builder"
-              />
-              <span>BODY BUILDER</span>
-            </div>
-            <div class="product-card">
-              <img src="images/Anti-Slip Rubber Mat.jpeg" alt="Yoga" />
-              <span>YOGA</span>
-            </div>
-            <div class="product-card">
-              <img
-                src="images/Shock Absorbent Rubber Sheet.jpeg"
-                alt="Cycling"
-              />
-              <span>CYCLING</span>
-            </div>
+            <!-- Stretch Ceiling -->
+            <a href="product.html" class="product-card">
+              <div class="product-preview">
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.42 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.43 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.43 PM (1).jpeg"
+                />
+              </div>
+              <span>STRETCH CEILING</span>
+            </a>
+
+            <!-- Running Track -->
+            <a href="product.html" class="product-card">
+              <div class="product-preview">
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.48 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.16.57 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.17.00 PM.jpeg"
+                />
+              </div>
+              <span>RUNNING TRACK</span>
+            </a>
+
+            <!-- Sports Grass -->
+            <a href="product.html" class="product-card">
+              <div class="product-preview">
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.21 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.20 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.19 PM.jpeg"
+                />
+              </div>
+              <span>SPORTS GRASS</span>
+            </a>
+
+            <!-- White Rubber Roll -->
+            <a href="product.html" class="product-card">
+              <div class="product-preview">
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.37 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
+                />
+              </div>
+              <span>WHITE RUBBER ROLL</span>
+            </a>
+
+            <!-- Colour Tile -->
+            <a href="product.html" class="product-card">
+              <div class="product-preview">
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.38.47 PM (1).jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.28.17 PM.jpeg"
+                />
+                <img
+                  src="images/WhatsApp Image 2026-03-01 at 1.28.15 PM.jpeg"
+                />
+              </div>
+              <span>COLOUR TILE</span>
+            </a>
           </div>
         </div>
       </section>
@@ -1456,7 +1730,7 @@
             <p>Your deadlifts become a whisper.</p>
           </div>
           <div class="benefit-card">
-            <div class="icon"><i class="fas fa-shield-halved"></i></div>
+            <div class="icon"><i class="fas fa-user-shield"></i></div>
             <h3>ZERO REPLACEMENT</h3>
             <p>10 years, same floor, no sag.</p>
           </div>
@@ -1468,21 +1742,58 @@
         </div>
       </section>
 
-      <!-- 5. HOW IT WORKS -->
-      <section id="how">
-        <h2>3 MOVES TO HEAVEN</h2>
-        <div class="steps-container">
-          <div class="step-item">
-            <h3>FIRE LASER</h3>
-            <p>Measure your space, we cut exact.</p>
+      <!-- GALLERY -->
+      <section class="gallery-section">
+        <div class="gallery-container">
+          <div class="gallery-header">
+            <p class="gallery-tag">Our Installations</p>
+            <h2 class="gallery-title">REAL GYMS. REAL FLOORS.</h2>
           </div>
-          <div class="step-item">
-            <h3>CLICK & LOCK</h3>
-            <p>Tiles fuse like titanium puzzle.</p>
-          </div>
-          <div class="step-item">
-            <h3>DROP ATOMIC</h3>
-            <p>First rep – floor smiles back.</p>
+
+          <div class="gallery-grid">
+            <div class="gallery-item wide">
+              <img src="images/gallery1.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery2.jpeg" />
+            </div>
+
+            <div class="gallery-item tall">
+              <img src="images/gallery3.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery4.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery5.jpeg" />
+            </div>
+
+            <div class="gallery-item wide">
+              <img src="images/gallery6.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery7.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery8.jpeg" />
+            </div>
+
+            <div class="gallery-item tall">
+              <img src="images/gallery9.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery10.jpeg" />
+            </div>
+
+            <div class="gallery-item">
+              <img src="images/gallery11.jpeg" />
+            </div>
           </div>
         </div>
       </section>
@@ -1601,6 +1912,39 @@
         </div>
       </section>
 
+      <section class="floor-benefits">
+        <div class="benefits-wrapper">
+          <!-- LEFT IMAGE -->
+          <div class="benefits-image">
+            <img src="images/still-life-gym-equipment.jpg" alt="Gym Training" />
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="benefits-content">
+            <div class="benefit-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+
+            <p class="benefit-tag">Flooring Benefits</p>
+
+            <h2 class="benefit-heading">
+              SUPERIOR <br />
+              SHOCK <br />
+              ABSORPTION
+            </h2>
+
+            <div class="benefit-list">
+              <div>✔ Heavy-Duty Durability</div>
+              <div>✔ Slip-Resistant</div>
+              <div>✔ Noise Reduction</div>
+              <div>✔ Low Maintenance</div>
+              <div>✔ Easy Installation</div>
+              <div>✔ Eco-Friendly</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 10. FINAL CTA -->
       <section>
         <div class="final-cta-block">
@@ -1618,46 +1962,19 @@
       </section>
     </main>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="contact-container">
-        <div class="contact-info">
-          <p class="contact-tag">Get In Touch</p>
-          <h2 class="contact-title">CONTACT US</h2>
-          <p class="contact-desc">
-            Have questions about our gym flooring solutions? Reach out to our
-            team and we’ll respond within 24 hours.
-          </p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <h4>📍 Address</h4>
-              <p>Sector 62, Noida, India</p>
-            </div>
-            <div class="contact-item">
-              <h4>📞 Phone</h4>
-              <p>+91 98765 43210</p>
-            </div>
-            <div class="contact-item">
-              <h4>✉ Email</h4>
-              <p>info@vivegym.com</p>
-            </div>
-          </div>
-        </div>
-        <!-- (form commented out in original) -->
-      </div>
-    </section>
-
-    <!-- FOOTER -->
+    <!-- FOOTER WITH CONTACT -->
     <footer class="site-footer">
       <div class="footer-container">
+        <!-- BRAND -->
         <div class="footer-col footer-brand">
           <h2 class="footer-logo">ULTIMATEFLOOR</h2>
-          <p class="copyright">Copyright © 2021 UltimateFloor.</p>
           <p class="footer-text">
-            Push harder today on the off chance that you want an alternate
-            tomorrow
+            Premium gym flooring solutions designed for durability, safety and
+            performance.
           </p>
         </div>
+
+        <!-- QUICK LINKS -->
         <div class="footer-col">
           <h4>Pages</h4>
           <ul>
@@ -1667,33 +1984,43 @@
             <li><a href="#">Pricing</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Other Links</h4>
-          <ul>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Sample Class</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+
+        <!-- CONTACT (SMALL VERSION) -->
+        <div class="footer-col footer-contact">
+          <h4>Contact Us</h4>
+
+          <p>
+            <strong>📍 Address:</strong><br />
+            Sector 62, Noida, India
+          </p>
+
+          <p>
+            <strong>📞 Phone:</strong><br />
+            +91 98765 43210
+          </p>
+
+          <p>
+            <strong>✉ Email:</strong><br />
+            info@vivegym.com
+          </p>
         </div>
       </div>
+
+      <!-- BOTTOM BAR -->
       <div class="footer-bottom">
+        <p class="copyright">© 2021 UltimateFloor. All Rights Reserved.</p>
+
         <div class="social-icons">
-          <a href="https://facebook.com" target="_blank"
-            ><i class="fab fa-facebook fa-2x"></i
-          ></a>
-          <a href="https://telegram.org" target="_blank"
-            ><i class="fab fa-telegram fa-2x"></i
-          ></a>
-          <a href="https://youtube.com" target="_blank"
-            ><i class="fab fa-youtube fa-2x"></i
-          ></a>
-          <a href="https://instagram.com" target="_blank"
-            ><i class="fab fa-instagram fa-2x"></i
-          ></a>
+          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#"><i class="fab fa-telegram fa-lg"></i></a>
+          <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
         </div>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a> <a href="#">Terms & Conditions</a>
-        </div>
+
+        <!-- <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div> -->
       </div>
     </footer>
 
