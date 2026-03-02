@@ -330,7 +330,7 @@
       .step-item {
         background: #131518;
         border-radius: 50px 10px 50px 10px;
-        padding: 2rem;
+        padding: 3.2rem 2rem 2rem;
         border: 1px solid #2a2c32;
         position: relative;
         margin-top: 15px;
@@ -1432,12 +1432,47 @@
       .product-card:hover .product-preview img {
         transform: scale(1.08);
       }
+
+      .design-credit {
+        font-size: 0.95rem;
+        color: #888;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .design-credit a {
+        color: #ef4444;
+        text-decoration: none;
+        font-weight: 700;
+        position: relative;
+        transition: 0.3s ease;
+      }
+
+      /* underline animation */
+      .design-credit a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0%;
+        height: 2px;
+        background: #ef4444;
+        transition: 0.3s;
+      }
+
+      .design-credit a:hover {
+        color: white;
+      }
+
+      .design-credit a:hover::after {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
     <header class="site-header">
       <div class="container nav">
-        <div class="logo">ULTIMATE<span>FLOOR</span></div>
+        <div class="logo">THE ULTIMATE<span> GYM FLOORING</span></div>
 
         <button class="menu-toggle" aria-label="Toggle Menu">
           <i class="fas fa-bars"></i>
@@ -1480,22 +1515,6 @@
                 20mm vulcanized rubber · 10 year armor warranty · no sound, no
                 slip, no mercy
               </p>
-              <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-                <a href="#pricing" class="floating-badge"
-                  ><i class="fas fa-bolt"></i> CLAIM YOUR DISCOUNT</a
-                >
-                <a
-                  href="#how"
-                  style="
-                    background: transparent;
-                    border: 1px solid #ef4444;
-                    padding: 0.5rem 1.8rem;
-                    border-radius: 60px;
-                    color: white;
-                  "
-                  >→ WATCH REEL</a
-                >
-              </div>
             </div>
             <div class="hero-sub">
               <i class="fas fa-dumbbell"></i>
@@ -1949,11 +1968,8 @@
       <section>
         <div class="final-cta-block">
           <h3>UNLEASH <span style="color: #ef4444">THE BEAST</span> FLOOR</h3>
-          <p style="font-size: 1.6rem; margin: 2rem 0">
-            10 year armor · 60-day trial · free shipping over $1500
-          </p>
           <a
-            href="https://wa.me/1234567890?text=Let's%20upgrade%20my%20gym%20floor%20NOW"
+            href="https://wa.me/919911192123?text=Let's%20upgrade%20my%20gym%20floor%20NOW"
             target="_blank"
             class="glow-button"
             ><i class="fab fa-whatsapp"></i> ORDER VIA WA</a
@@ -1967,7 +1983,8 @@
       <div class="footer-container">
         <!-- BRAND -->
         <div class="footer-col footer-brand">
-          <h2 class="footer-logo">ULTIMATEFLOOR</h2>
+          <h2 class="footer-logo">THE ULTIMATE</h2>
+          <h2>GYM FLOORING</h2>
           <p class="footer-text">
             Premium gym flooring solutions designed for durability, safety and
             performance.
@@ -2008,19 +2025,26 @@
 
       <!-- BOTTOM BAR -->
       <div class="footer-bottom">
-        <p class="copyright">© 2021 UltimateFloor. All Rights Reserved.</p>
+        <p class="copyright">
+          © 2025 The Ultimate GYM Flooring. All Rights Reserved.
+        </p>
+
+        <p class="design-credit">
+          Designed by
+          <a href="https://visionxdigital.com" target="_blank">
+            Vision X Digital
+          </a>
+        </p>
 
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
           <a href="#"><i class="fab fa-telegram fa-lg"></i></a>
           <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
-          <a href="https://www.instagram.com/adityarock44?igsh=Nmg5c3FmdG81aGRu&utm_source=qr"><i class="fab fa-instagram fa-lg"></i></a>
+          <a
+            href="https://www.instagram.com/adityarock44?igsh=Nmg5c3FmdG81aGRu&utm_source=qr"
+            ><i class="fab fa-instagram fa-lg"></i
+          ></a>
         </div>
-
-        <!-- <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-        </div> -->
       </div>
     </footer>
 
