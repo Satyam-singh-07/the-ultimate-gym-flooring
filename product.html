@@ -96,15 +96,30 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 80px;
+        height: 88px;
       }
       .logo {
-        font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.05;
+        font-size: 1.35rem;
         font-weight: 800;
         letter-spacing: 1px;
       }
+      .logo-title {
+        white-space: nowrap;
+        letter-spacing: 1.8px;
+      }
       .logo span {
         color: #ef4444;
+      }
+      .logo-tagline {
+        margin-top: 0.2rem;
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 2.2px;
+        color: #bdbdc7;
+        text-transform: uppercase;
       }
       .nav-links {
         display: flex;
@@ -316,6 +331,192 @@
         position: relative;
       }
 
+      .delivery-section {
+        margin-top: 1rem;
+      }
+
+      .delivery-wrap {
+        background:
+          radial-gradient(circle at 10% 0%, #2a1212 0%, transparent 55%),
+          linear-gradient(145deg, #0f1016, #07080b);
+        border: 1px solid rgba(239, 68, 68, 0.35);
+        border-radius: 48px 14px 48px 14px;
+        padding: 2.6rem 1.8rem;
+        box-shadow: 0 30px 70px -40px rgba(239, 68, 68, 0.8);
+      }
+
+      .delivery-kicker {
+        display: inline-block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: #f87171;
+        margin-bottom: 0.9rem;
+      }
+
+      .delivery-title {
+        margin-bottom: 0.9rem;
+        font-size: clamp(1.8rem, 4.2vw, 3rem);
+        color: #fff;
+        background: none;
+        -webkit-background-clip: initial;
+        background-clip: initial;
+        border: none;
+        padding-left: 0;
+        display: block;
+      }
+
+      .delivery-title span {
+        color: #ef4444;
+      }
+
+      .delivery-text {
+        color: #c9c9d3;
+        max-width: 900px;
+        margin-bottom: 1.4rem;
+      }
+
+      .delivery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .delivery-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 1.1rem 1rem;
+      }
+
+      .delivery-card i {
+        color: #ef4444;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .delivery-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .delivery-card p {
+        color: #b6b7bf;
+        font-size: 0.9rem;
+      }
+
+      .delivery-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .delivery-badges span {
+        border: 1px solid rgba(239, 68, 68, 0.4);
+        background: rgba(239, 68, 68, 0.08);
+        color: #fca5a5;
+        padding: 0.38rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .enquiry-section {
+        margin-top: 2rem;
+      }
+
+      .enquiry-wrap {
+        background: linear-gradient(145deg, #0f0f14, #09090c);
+        border: 1px solid rgba(239, 68, 68, 0.32);
+        border-radius: 36px 12px 36px 12px;
+        padding: 2.4rem 1.8rem;
+        box-shadow: 0 30px 70px -45px rgba(239, 68, 68, 0.85);
+      }
+
+      .enquiry-head {
+        margin-bottom: 1.2rem;
+      }
+
+      .enquiry-head p {
+        color: #f87171;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+
+      .enquiry-head h3 {
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        line-height: 1.2;
+      }
+
+      .enquiry-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.95rem;
+      }
+
+      .enquiry-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.42rem;
+      }
+
+      .enquiry-group.full {
+        grid-column: 1 / -1;
+      }
+
+      .enquiry-group label {
+        color: #d3d3dc;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .enquiry-group input,
+      .enquiry-group textarea {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.04);
+        color: #f4f4f8;
+        border-radius: 12px;
+        padding: 0.8rem 0.9rem;
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+      }
+
+      .enquiry-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .enquiry-group input:focus,
+      .enquiry-group textarea:focus {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+      }
+
+      .enquiry-submit {
+        margin-top: 1rem;
+        background: #ef4444;
+        color: #090909;
+        border: none;
+        border-radius: 999px;
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.25s ease;
+      }
+
+      .enquiry-submit:hover {
+        background: #fff;
+        box-shadow: 0 0 24px rgba(255, 255, 255, 0.38);
+      }
+
       /* ---------- FOOTER (updated to match index) ---------- */
       .site-footer {
         background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
@@ -437,10 +638,10 @@
         }
         .nav-links {
           position: fixed;
-          top: 80px;
+          top: 88px;
           left: 0;
           width: 100%;
-          height: calc(100vh - 80px);
+          height: calc(100vh - 88px);
           background: rgba(10, 10, 12, 0.98);
           backdrop-filter: blur(20px);
           display: flex;
@@ -464,6 +665,14 @@
           position: fixed;
           width: 100%;
         }
+
+        .delivery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .enquiry-grid {
+          grid-template-columns: 1fr;
+        }
       }
       @media (max-width: 600px) {
         .wa-float {
@@ -482,6 +691,14 @@
         }
         .social-icons {
           justify-content: center;
+        }
+
+        .delivery-wrap {
+          padding: 2rem 1.2rem;
+        }
+
+        .enquiry-wrap {
+          padding: 2rem 1.2rem;
         }
       }
       main {
@@ -510,7 +727,10 @@
     <!-- HEADER (identical to index) -->
     <header class="site-header">
       <div class="container nav">
-        <div class="logo">THE ULTIMATE<span> GYM FLOORING</span></div>
+        <div class="logo">
+          <div class="logo-title">THE ULTIMATE<span> GYM FLOORING</span></div>
+          <div class="logo-tagline">India's Best Gym Flooring</div>
+        </div>
         <button class="menu-toggle" aria-label="Toggle Menu">
           <i class="fas fa-bars"></i>
         </button>
@@ -518,7 +738,6 @@
           <a href="index.html">Home</a>
           <a href="#benefits">Benefits</a>
           <a href="#how">How It Works</a>
-          <a href="#pricing">Pricing</a>
           <a href="product.html" style="color: #ef4444">Products</a>
         </nav>
       </div>
@@ -610,6 +829,52 @@
               </div>
             </div>
 
+            <!-- 4. New White Rubber Roll -->
+            <div class="product-card-detailed">
+              <h3>100% EPDM RUBBER ROLL</h3>
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
+                  alt="white rubber 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.37 PM.jpeg"
+                  alt="white rubber 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
+                  alt="white rubber 3"
+                />
+              </div>
+              <div class="product-spec-mini">
+                <span><i class="fas fa-weight-hanging"></i> 6mm / 8mm</span>
+                <span><i class="fas fa-broom"></i> stain resistant</span>
+              </div>
+              <div class="product-description-container">
+                <div class="deep-description">
+                  <p class="product-desc">
+                    Virgin rubber, bright white finish – never yellows. Easy
+                    clean, commercial grade.
+                  </p>
+                  <p class="product-desc">
+                    Our signature White Rubber Roll is the pinnacle of gym
+                    aesthetics. Made from 100% virgin rubber, it provides a
+                    non-porous surface that is completely stain-resistant and
+                    easy to sanitize. Unlike recycled rubber, this product has
+                    zero odor and a consistent, brilliant white finish that
+                    enhances light reflectivity in your facility. Extremely
+                    durable and non-marking even under heavy power racks.
+                  </p>
+                </div>
+              </div>
+              <div class="card-footer-line">
+                <span>⚡ non-marking</span> <span>★★★★★</span>
+              </div>
+            </div>
+
             <!-- 2. Running Track -->
             <div class="product-card-detailed">
               <h3>RUNNING TRACK</h3>
@@ -658,95 +923,48 @@
               </div>
             </div>
 
-            <!-- 3. Sports Grass -->
+            <!-- 8. Inter locking rubber tile -->
             <div class="product-card-detailed">
-              <h3>PP TILE</h3>
+              <h3>INTER LOCKING RUBBER TILE</h3>
               <div class="gallery-preview">
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.18.21 PM.jpeg"
-                  alt="sports grass 1"
+                  src="images/WhatsApp Image 2026-03-01 at 1.21.17 PM.jpeg"
+                  alt="colour tile 1"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.18.20 PM.jpeg"
-                  alt="sports grass 2"
+                  src="images/WhatsApp Image 2026-03-01 at 1.21.18 PM.jpeg"
+                  alt="colour tile 2"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.18.19 PM.jpeg"
-                  alt="sports grass 3"
+                  src="images/WhatsApp Image 2026-03-01 at 1.21.19 PM.jpeg"
+                  alt="colour tile 3"
                 />
               </div>
               <div class="product-spec-mini">
-                <span><i class="fas fa-leaf"></i> 40mm pile</span>
-                <span><i class="fas fa-fill-drip"></i> infill option</span>
+                <span><i class="fas fa-border-all"></i> 20x20cm</span>
+                <span><i class="fas fa-palette"></i> one colors</span>
               </div>
               <div class="product-description-container">
                 <div class="deep-description">
+                  <p class="product-desc">Premium Interlocking Rubber Tile</p>
                   <p class="product-desc">
-                    Turf for functional fitness, indoor/outdoor, realistic feel
-                    & drainage.
-                  </p>
-                  <p class="product-desc">
-                    This isn't just landscaping turf; it's high-density sports
-                    flooring. With a 40mm pile height and a reinforced backing,
-                    our sports grass is built to withstand heavy sled pushes and
-                    constant lateral movement without fraying. The polyethylene
-                    fibers are soft to the touch to prevent turf burns but tough
-                    enough for industrial use. Features an advanced drainage
-                    system for outdoor installation.
+                    Our Interlocking Rubber Tiles are the ultimate DIY solution
+                    for professional-grade gym flooring. Featuring a
+                    precision-cut interlocking edge, these tiles snap together
+                    seamlessly to create a tight, uniform surface that stays
+                    locked in place even during the most intense functional
+                    training sessions. Engineered from high-grade recycled
+                    rubber and vibrant EPDM granules, they provide a durable,
+                    high-density barrier that protects your subfloor from heavy
+                    dumbbell drops and high-impact movements.
                   </p>
                 </div>
               </div>
               <div class="card-footer-line">
-                <span>⚡ uv stable</span> <span>★★★★★</span>
-              </div>
-            </div>
-
-            <!-- 4. New White Rubber Roll -->
-            <div class="product-card-detailed">
-              <h3>WHITE RUBBER ROLL</h3>
-              <div class="gallery-preview">
-                <img
-                  class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
-                  alt="white rubber 1"
-                />
-                <img
-                  class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.26.37 PM.jpeg"
-                  alt="white rubber 2"
-                />
-                <img
-                  class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.26.38 PM.jpeg"
-                  alt="white rubber 3"
-                />
-              </div>
-              <div class="product-spec-mini">
-                <span><i class="fas fa-weight-hanging"></i> 6mm / 8mm</span>
-                <span><i class="fas fa-broom"></i> stain resistant</span>
-              </div>
-              <div class="product-description-container">
-                <div class="deep-description">
-                  <p class="product-desc">
-                    Virgin rubber, bright white finish – never yellows. Easy
-                    clean, commercial grade.
-                  </p>
-                  <p class="product-desc">
-                    Our signature White Rubber Roll is the pinnacle of gym
-                    aesthetics. Made from 100% virgin rubber, it provides a
-                    non-porous surface that is completely stain-resistant and
-                    easy to sanitize. Unlike recycled rubber, this product has
-                    zero odor and a consistent, brilliant white finish that
-                    enhances light reflectivity in your facility. Extremely
-                    durable and non-marking even under heavy power racks.
-                  </p>
-                </div>
-              </div>
-              <div class="card-footer-line">
-                <span>⚡ non-marking</span> <span>★★★★★</span>
+                <span>⚡ Premium Quality</span> <span>★★★★☆</span>
               </div>
             </div>
 
@@ -796,49 +1014,136 @@
               </div>
             </div>
 
-            <!-- 6. Stretch Ceiling -->
             <div class="product-card-detailed">
-              <h3>STRETCH CEILING</h3>
+              <h3>GREEN TURF(SPORTS GRASS)</h3>
+
               <div class="gallery-preview">
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.38.47 PM (1).jpeg"
-                  alt="colour tile 1"
+                  src="images/green1.jpeg"
+                  alt="green turf 1"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/gallery2.jpeg"
-                  alt="colour tile 2"
+                  src="images/green2.jpeg"
+                  alt="green turf 2"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/gallery1.jpeg"
-                  alt="colour tile 3"
+                  src="images/green3.jpeg"
+                  alt="green turf 3"
                 />
               </div>
+
               <div class="product-spec-mini">
-                <span><i class="fas fa-border-all"></i> 100x100cm</span>
-                <span><i class="fas fa-palette"></i> 9 colors</span>
+                <span><i class="fas fa-ruler"></i> 10–15mm pile</span>
+                <span><i class="fas fa-leaf"></i> high density</span>
               </div>
-              <div class="product-description-container">
-                <div class="deep-description">
-                  <p class="product-desc">Premium Stretch Ceiling Solutions</p>
-                  <p class="product-desc">
-                    The Ultimate Feature: Premium Designer Stretch Ceilings Our
-                    Stretch Ceilings are not just a renovation; they are a
-                    visual masterpiece. Designed for those who demand
-                    perfection, this product represents the pinnacle of modern
-                    interior luxury. Why This Product is Superior: •
-                    Breathtaking Visual Impact: Whether it’s the high-definition
-                    Liquid Marble textures or the sophisticated Ethereal Smoke
-                    patterns, our ceilings create a stunning focal point that
-                    instantly captures attention and elevates the prestige of
-                    any room.
-                  </p>
-                </div>
-              </div>
+
+              <p class="product-desc">
+                Our Classic Green Turf brings an energetic outdoor stadium feel
+                to your indoor facility. Engineered for high-intensity
+                functional training, it ensures smooth sled pushes and
+                consistent performance without resistance or catching.
+              </p>
+
+              <ul class="turf-highlights">
+                <li>✔ High Traction for explosive sprints</li>
+                <li>✔ Reinforced polyethylene fibers</li>
+                <li>✔ Shock absorption for joint protection</li>
+              </ul>
+
               <div class="card-footer-line">
-                <span>⚡ Marking</span> <span>★★★★☆</span>
+                <span>⚡ Natural Aesthetic</span>
+                <span>★★★★★</span>
+              </div>
+            </div>
+
+            <div class="product-card-detailed">
+              <h3>BLUE TURF(SPORTS GRASS)</h3>
+
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/blue1.jpeg"
+                  alt="blue turf 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/blue2.jpeg"
+                  alt="blue turf 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/blue3.jpeg"
+                  alt="blue turf 3"
+                />
+              </div>
+
+              <div class="product-spec-mini">
+                <span><i class="fas fa-ruler"></i> 10–15mm pile</span>
+                <span><i class="fas fa-star"></i> premium finish</span>
+              </div>
+
+              <p class="product-desc">
+                Electric Blue Turf upgrades your gym’s branding instantly. Ideal
+                for elite performance centers and modern fitness boutiques.
+                Industrial durability meets high-end visual identity.
+              </p>
+
+              <ul class="turf-highlights">
+                <li>✔ Modern High-Contrast Design</li>
+                <li>✔ UV Stable Color-Lock Technology</li>
+                <li>✔ Acoustic Insulation Performance</li>
+              </ul>
+
+              <div class="card-footer-line">
+                <span>⚡ High Contrast</span>
+                <span>★★★★★</span>
+              </div>
+            </div>
+
+            <div class="product-card-detailed">
+              <h3>RED TURF(SPORTS GRASS)</h3>
+
+              <div class="gallery-preview">
+                <img
+                  class="gallery-thumb"
+                  src="images/red1.jpeg"
+                  alt="red turf 1"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/red2.jpeg"
+                  alt="red turf 2"
+                />
+                <img
+                  class="gallery-thumb"
+                  src="images/red1.jpeg"
+                  alt="red turf 3"
+                />
+              </div>
+
+              <div class="product-spec-mini">
+                <span><i class="fas fa-ruler"></i> 10–15mm pile</span>
+                <span><i class="fas fa-fire"></i> industrial grade</span>
+              </div>
+
+              <p class="product-desc">
+                Bold Red Turf powers high-intensity training zones. Designed for
+                CrossFit and aggressive strength environments, delivering
+                unmatched resilience under extreme sled abuse.
+              </p>
+
+              <ul class="turf-highlights">
+                <li>✔ Anti-Slip Even Under Moisture</li>
+                <li>✔ Low Maintenance & Stain Resistant</li>
+                <li>✔ Reinforced Heavy-Duty Backing</li>
+              </ul>
+
+              <div class="card-footer-line">
+                <span>⚡ High Intensity</span>
+                <span>★★★★★</span>
               </div>
             </div>
 
@@ -888,181 +1193,95 @@
               </div>
             </div>
 
-            <!-- 8. Inter locking rubber tile -->
+            <!-- 6. Stretch Ceiling -->
             <div class="product-card-detailed">
-              <h3>INTER LOCKING RUBBER TILE</h3>
+              <h3>STRETCH CEILING</h3>
               <div class="gallery-preview">
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.21.17 PM.jpeg"
+                  src="images/WhatsApp Image 2026-03-01 at 1.38.47 PM (1).jpeg"
                   alt="colour tile 1"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.21.18 PM.jpeg"
+                  src="images/gallery2.jpeg"
                   alt="colour tile 2"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/WhatsApp Image 2026-03-01 at 1.21.19 PM.jpeg"
+                  src="images/gallery1.jpeg"
                   alt="colour tile 3"
                 />
               </div>
               <div class="product-spec-mini">
-                <span><i class="fas fa-border-all"></i> 20x20cm</span>
-                <span><i class="fas fa-palette"></i> one colors</span>
+                <span><i class="fas fa-border-all"></i> 100x100cm</span>
+                <span><i class="fas fa-palette"></i> 9 colors</span>
               </div>
               <div class="product-description-container">
                 <div class="deep-description">
-                  <p class="product-desc">Premium Interlocking Rubber Tile</p>
+                  <p class="product-desc">Premium Stretch Ceiling Solutions</p>
                   <p class="product-desc">
-                    Our Interlocking Rubber Tiles are the ultimate DIY solution
-                    for professional-grade gym flooring. Featuring a
-                    precision-cut interlocking edge, these tiles snap together
-                    seamlessly to create a tight, uniform surface that stays
-                    locked in place even during the most intense functional
-                    training sessions. Engineered from high-grade recycled
-                    rubber and vibrant EPDM granules, they provide a durable,
-                    high-density barrier that protects your subfloor from heavy
-                    dumbbell drops and high-impact movements.
+                    The Ultimate Feature: Premium Designer Stretch Ceilings Our
+                    Stretch Ceilings are not just a renovation; they are a
+                    visual masterpiece. Designed for those who demand
+                    perfection, this product represents the pinnacle of modern
+                    interior luxury. Why This Product is Superior: •
+                    Breathtaking Visual Impact: Whether it’s the high-definition
+                    Liquid Marble textures or the sophisticated Ethereal Smoke
+                    patterns, our ceilings create a stunning focal point that
+                    instantly captures attention and elevates the prestige of
+                    any room.
                   </p>
                 </div>
               </div>
               <div class="card-footer-line">
-                <span>⚡ Premium Quality</span> <span>★★★★☆</span>
+                <span>⚡ Marking</span> <span>★★★★☆</span>
               </div>
             </div>
 
+            <!-- 3. PP TILES -->
             <div class="product-card-detailed">
-              <h3>GREEN TURF</h3>
-
+              <h3>PP TILE</h3>
               <div class="gallery-preview">
                 <img
                   class="gallery-thumb"
-                  src="images/green1.jpeg"
-                  alt="green turf 1"
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.21 PM.jpeg"
+                  alt="sports grass 1"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/green2.jpeg"
-                  alt="green turf 2"
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.20 PM.jpeg"
+                  alt="sports grass 2"
                 />
                 <img
                   class="gallery-thumb"
-                  src="images/green3.jpeg"
-                  alt="green turf 3"
+                  src="images/WhatsApp Image 2026-03-01 at 1.18.19 PM.jpeg"
+                  alt="sports grass 3"
                 />
               </div>
-
               <div class="product-spec-mini">
-                <span><i class="fas fa-ruler"></i> 10–15mm pile</span>
-                <span><i class="fas fa-leaf"></i> high density</span>
+                <span><i class="fas fa-leaf"></i> 40mm pile</span>
+                <span><i class="fas fa-fill-drip"></i> infill option</span>
               </div>
-
-              <p class="product-desc">
-                Our Classic Green Turf brings an energetic outdoor stadium feel
-                to your indoor facility. Engineered for high-intensity
-                functional training, it ensures smooth sled pushes and
-                consistent performance without resistance or catching.
-              </p>
-
-              <ul class="turf-highlights">
-                <li>✔ High Traction for explosive sprints</li>
-                <li>✔ Reinforced polyethylene fibers</li>
-                <li>✔ Shock absorption for joint protection</li>
-              </ul>
-
+              <div class="product-description-container">
+                <div class="deep-description">
+                  <p class="product-desc">
+                    Turf for functional fitness, indoor/outdoor, realistic feel
+                    & drainage.
+                  </p>
+                  <p class="product-desc">
+                    This isn't just landscaping turf; it's high-density sports
+                    flooring. With a 40mm pile height and a reinforced backing,
+                    our sports grass is built to withstand heavy sled pushes and
+                    constant lateral movement without fraying. The polyethylene
+                    fibers are soft to the touch to prevent turf burns but tough
+                    enough for industrial use. Features an advanced drainage
+                    system for outdoor installation.
+                  </p>
+                </div>
+              </div>
               <div class="card-footer-line">
-                <span>⚡ Natural Aesthetic</span>
-                <span>★★★★★</span>
-              </div>
-            </div>
-
-            <div class="product-card-detailed">
-              <h3>BLUE TURF</h3>
-
-              <div class="gallery-preview">
-                <img
-                  class="gallery-thumb"
-                  src="images/blue1.jpeg"
-                  alt="blue turf 1"
-                />
-                <img
-                  class="gallery-thumb"
-                  src="images/blue2.jpeg"
-                  alt="blue turf 2"
-                />
-                <img
-                  class="gallery-thumb"
-                  src="images/blue3.jpeg"
-                  alt="blue turf 3"
-                />
-              </div>
-
-              <div class="product-spec-mini">
-                <span><i class="fas fa-ruler"></i> 10–15mm pile</span>
-                <span><i class="fas fa-star"></i> premium finish</span>
-              </div>
-
-              <p class="product-desc">
-                Electric Blue Turf upgrades your gym’s branding instantly. Ideal
-                for elite performance centers and modern fitness boutiques.
-                Industrial durability meets high-end visual identity.
-              </p>
-
-              <ul class="turf-highlights">
-                <li>✔ Modern High-Contrast Design</li>
-                <li>✔ UV Stable Color-Lock Technology</li>
-                <li>✔ Acoustic Insulation Performance</li>
-              </ul>
-
-              <div class="card-footer-line">
-                <span>⚡ High Contrast</span>
-                <span>★★★★★</span>
-              </div>
-            </div>
-
-            <div class="product-card-detailed">
-              <h3>RED TURF</h3>
-
-              <div class="gallery-preview">
-                <img
-                  class="gallery-thumb"
-                  src="images/red1.jpeg"
-                  alt="red turf 1"
-                />
-                <img
-                  class="gallery-thumb"
-                  src="images/red2.jpeg"
-                  alt="red turf 2"
-                />
-                <img
-                  class="gallery-thumb"
-                  src="images/red1.jpeg"
-                  alt="red turf 3"
-                />
-              </div>
-
-              <div class="product-spec-mini">
-                <span><i class="fas fa-ruler"></i> 10–15mm pile</span>
-                <span><i class="fas fa-fire"></i> industrial grade</span>
-              </div>
-
-              <p class="product-desc">
-                Bold Red Turf powers high-intensity training zones. Designed for
-                CrossFit and aggressive strength environments, delivering
-                unmatched resilience under extreme sled abuse.
-              </p>
-
-              <ul class="turf-highlights">
-                <li>✔ Anti-Slip Even Under Moisture</li>
-                <li>✔ Low Maintenance & Stain Resistant</li>
-                <li>✔ Reinforced Heavy-Duty Backing</li>
-              </ul>
-
-              <div class="card-footer-line">
-                <span>⚡ High Intensity</span>
-                <span>★★★★★</span>
+                <span>⚡ uv stable</span> <span>★★★★★</span>
               </div>
             </div>
           </div>
@@ -1092,6 +1311,81 @@
           </div>
         </div>
       </section>
+
+      <section class="delivery-section">
+        <div class="delivery-wrap">
+          <p class="delivery-kicker">Pan-India Logistics</p>
+          <h2 class="delivery-title">
+            We Deliver All Over India <span>Including Nepal</span>
+          </h2>
+          <p class="delivery-text">
+            Fast dispatch, safe packaging, and direct support from booking to
+            unloading at your location.
+          </p>
+          <div class="delivery-grid">
+            <div class="delivery-card">
+              <i class="fas fa-map-marked-alt"></i>
+              <h3>All Over India</h3>
+              <p>Delivery coverage across major cities and surrounding towns.</p>
+            </div>
+            <div class="delivery-card">
+              <i class="fas fa-truck-ramp-box"></i>
+              <h3>Commercial Safe Dispatch</h3>
+              <p>Heavy-duty packaging for tiles, rolls, turf, and accessories.</p>
+            </div>
+            <div class="delivery-card">
+              <i class="fas fa-mountain-city"></i>
+              <h3>Nepal Coverage</h3>
+              <p>Cross-border delivery support for projects in Nepal.</p>
+            </div>
+          </div>
+          <div class="delivery-badges">
+            <span>Delhi NCR</span><span>Mumbai</span><span>Bengaluru</span
+            ><span>Hyderabad</span><span>Kolkata</span><span>Chennai</span
+            ><span>Pune</span><span>Ahmedabad</span><span>Nepal</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="enquiry-section">
+        <div class="enquiry-wrap">
+          <div class="enquiry-head">
+            <p>Quick Enquiry</p>
+            <h3>Submit Your Requirement and Continue on WhatsApp</h3>
+          </div>
+          <form class="wa-enquiry-form">
+            <div class="enquiry-grid">
+              <div class="enquiry-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div class="enquiry-group">
+                <label for="mobile">Mobile</label>
+                <input id="mobile" name="mobile" type="tel" required />
+              </div>
+              <div class="enquiry-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="enquiry-group">
+                <label for="address">Address</label>
+                <input id="address" name="address" type="text" required />
+              </div>
+              <div class="enquiry-group full">
+                <label for="description">Description</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <button class="enquiry-submit" type="submit">
+              Submit on WhatsApp
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!-- FOOTER WITH CONTACT -->
@@ -1114,7 +1408,6 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Benefits</a></li>
             <li><a href="#">How It Works</a></li>
-            <li><a href="#">Pricing</a></li>
           </ul>
         </div>
 
@@ -1125,7 +1418,7 @@
           <p>
             <strong>📍 Address:</strong><br />
             Mahipalpur, K-2 Block Vasant Kuni Road, Khasra No. 836, Near Mata
-            Chowk Above Mahindra Showroom, Ist Floor (Lower Ground Entrv)
+            Chowk Above Mahindra Showroom, Ist Floor (Lower Ground Entrv) New Delhi
           </p>
 
           <p>
@@ -1138,7 +1431,7 @@
           </p>
           <p>
             <strong>✉ Email:</strong><br />
-            ultimatemusclegym786@gmail.com
+            theultimategymflooring@gmail.com
           </p>
         </div>
       </div>
@@ -1219,6 +1512,24 @@
                 icon.classList.remove("fa-times");
               }
             });
+          });
+        }
+
+        const enquiryForm = document.querySelector(".wa-enquiry-form");
+        if (enquiryForm) {
+          enquiryForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const data = new FormData(enquiryForm);
+            const message = [
+              "New Gym Flooring Enquiry",
+              `Name: ${data.get("name") || ""}`,
+              `Mobile: ${data.get("mobile") || ""}`,
+              `Email: ${data.get("email") || ""}`,
+              `Address: ${data.get("address") || ""}`,
+              `Description: ${data.get("description") || ""}`,
+            ].join("\n");
+            const waUrl = `https://wa.me/919911192123?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, "_blank");
           });
         }
 
