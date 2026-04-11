@@ -1339,30 +1339,38 @@
       }
 
       @media (max-width: 768px) {
+        .nav {
+          height: auto;
+          padding: 1rem 0;
+          flex-wrap: wrap;
+          gap: 1rem;
+          justify-content: space-around;
+        }
+
+        .logo {
+          font-size: 1.1rem;
+          flex: 1 1 auto;
+        }
+
         .header-gst {
-          margin-left: 0.5rem;
-          padding: 0.2rem 0.4rem;
-          border-radius: 4px;
-        }
-
-        .gst-label {
-          font-size: 0.5rem;
-        }
-
-        .gst-number {
-          font-size: 0.7rem;
+          margin: 0;
+          order: 2;
+          width: 100%;
+          align-items: center;
+          background: rgba(239, 68, 68, 0.15);
         }
 
         .menu-toggle {
           display: block;
+          order: 1;
         }
 
         .nav-links {
           position: fixed;
-          top: 88px;
+          top: 140px; /* Adjusted for taller mobile header */
           left: 0;
           width: 100%;
-          height: calc(100vh - 88px);
+          height: calc(100vh - 140px);
           background: rgba(10, 10, 12, 0.98);
           backdrop-filter: blur(20px);
           display: flex;
