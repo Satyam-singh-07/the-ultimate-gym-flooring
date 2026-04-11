@@ -836,6 +836,34 @@
         text-transform: uppercase;
       }
 
+      .header-gst {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: 0.3s ease;
+      }
+
+      .gst-label {
+        color: #ef4444;
+        font-size: 0.65rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .gst-number {
+        font-family: monospace;
+        font-weight: 700;
+        color: white;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+
       .nav-links {
         display: flex;
         align-items: center;
@@ -1311,6 +1339,20 @@
       }
 
       @media (max-width: 768px) {
+        .header-gst {
+          margin-left: 0.5rem;
+          padding: 0.2rem 0.4rem;
+          border-radius: 4px;
+        }
+
+        .gst-label {
+          font-size: 0.5rem;
+        }
+
+        .gst-number {
+          font-size: 0.7rem;
+        }
+
         .menu-toggle {
           display: block;
         }
@@ -1719,18 +1761,9 @@
           <div class="logo-tagline">India's Best Gym Flooring</div>
         </div>
 
-        <div class="header-gst" style="
-          background: rgba(239, 68, 68, 0.1);
-          border: 1px solid rgba(239, 68, 68, 0.3);
-          padding: 0.4rem 0.8rem;
-          border-radius: 8px;
-          margin-left: 1.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-        ">
-          <span style="color: #ef4444; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">GST Number</span>
-          <span style="font-family: monospace; font-weight: 700; color: white; font-size: 0.9rem; letter-spacing: 0.5px;">07BWBPR9861E1Z6</span>
+        <div class="header-gst">
+          <span class="gst-label">GST Number</span>
+          <span class="gst-number">07BWBPR9861E1Z6</span>
         </div>
 
         <button class="menu-toggle" aria-label="Toggle Menu">
